@@ -1,0 +1,3 @@
+eureka-client-trainer-producer:
+         ribbon:
+          listOfServers: http://localhost:8060

@@ -1,0 +1,3 @@
+insert into trainer(trainercode,name,email,mobileno,password,skillset) values(1,'sai','sai@gmail.com',8000000000,'hello','java,c');
+insert into trainer(trainercode,name,email,mobileno,password,skillset) values(2,'sanjay','sanjay@gmail.com',9000000000,'hello','java,c');
+insert into trainer(trainercode,name,email,mobileno,password,skillset) values(3,'sandeep','sandeep@gmail.com',2000000000,'hello','c');
