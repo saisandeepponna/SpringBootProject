@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.training.bean.Trainer;
@@ -13,18 +11,24 @@ import com.training.interfaces.TrainerServiceI;
 import com.training.repo.TrainerRepo;
 
 
-
 @Service
 public class TrainerService implements TrainerServiceI {
 
 	@Autowired
 	private TrainerRepo trainerRepo;
+	
+	
 	@Value("${usernotfoundmessage}")
-	public String usermessage;
+	private String usermessage;
+	
 	@Value("${useradd}")
-	public String useradd;
+	private String useradd;
+	
 	@Value("${nodata}")
-	public String nodata;
+	private String nodata;
+
+
+	
 	@Override
 	public List<Trainer> findAll() {
 			return trainerRepo.findAll();
@@ -48,7 +52,7 @@ public class TrainerService implements TrainerServiceI {
 	@Override
 	public String loginUser(String email, String password) {
 		List<Trainer> userList=trainerRepo.userLogin(email, password);
-		System.out.println(userList);
+		//System.out.println(userList);
 		
 		for(Trainer t:userList) {
 			if(t.getEmail().equals(email) && t.getPassword().equals(password)) {
@@ -75,11 +79,5 @@ public class TrainerService implements TrainerServiceI {
 	    }
 	    return nodata;
 	}
-	
-	
-	
-
-	
-	
 
 }

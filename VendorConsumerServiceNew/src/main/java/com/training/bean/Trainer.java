@@ -1,9 +1,8 @@
 package com.training.bean;
 
-
-
-
-//import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import lombok.*;
 
@@ -14,19 +13,17 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-
-//@Entity
+@Entity
 public class Trainer{ 
-  //  @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
+    @Id
 	private int trainercode;
-    //@Column
+    @Column
 	private String name;
 
 	private String email;
 	private long mobileno;
 	private String password;
 	private String skillset;
-	
-	
+
+
 }
